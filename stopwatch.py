@@ -1,4 +1,5 @@
 from textual.app import App
+from textual.containers import ScrollableContainer
 from textual.widgets import Footer, Header, Static, Button
 
 # Costum stopwatch widget
@@ -15,7 +16,10 @@ class StopwatchApp(App):
 
     def compose(self):
         yield Header(show_clock=True)
-        yield Stopwatch()
+
+        with ScrollableContainer(id="stopwatches"):
+            yield Stopwatch()
+
         yield Footer()
 
     # Action method (starts with: action_)
