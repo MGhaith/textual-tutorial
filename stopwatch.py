@@ -11,7 +11,7 @@ class Stopwatch(Static):
 
 class StopwatchApp(App):
 
-    CSS_PATH = "stopwatch.css"
+    CSS_PATH = "stopwatch.tcss"
     BINDINGS = [
         ("d", "toggle_dark_mode", "Toggle dark mode"),
     ]
