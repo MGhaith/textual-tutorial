@@ -3,7 +3,7 @@ from textual.widgets import Footer, Header
 
 class StopwatchApp(App):
     def compose(self):
-        yield Header()
+        yield Header(show_clock=True)
         yield Footer()
 
 if __name__ == "__main__":
