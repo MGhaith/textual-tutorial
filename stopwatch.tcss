@@ -1,3 +1,27 @@
 Stopwatch {
     layout: horizontal;
+    background: $boost;
+    min-width: 50;
+    margin: 1;
+    padding: 1;
+    height: 5;
+}
+
+TimeDisplay {
+    height: 3;
+    content-align: center middle;
+    text-opacity: 60%;
+}
+
+#start {
+    dock: left;
+}
+
+#stop {
+    dock: left;
+    display: none;
+}
+
+#reset {
+    dock: right;
 }
