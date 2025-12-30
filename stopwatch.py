@@ -1,5 +1,12 @@
 from textual.app import App
-from textual.widgets import Footer, Header
+from textual.widgets import Footer, Header, Static, Button
+
+# Costum stopwatch widget
+class Stopwatch(Static):
+    def compose(self):
+        yield Button("Start", variant="success")
+        yield Button("Stop", variant="error")
+        yield Button("Reset")
 
 class StopwatchApp(App):
     BINDINGS = [
@@ -8,6 +15,7 @@ class StopwatchApp(App):
 
     def compose(self):
         yield Header(show_clock=True)
+        yield Stopwatch()
         yield Footer()
 
     # Action method (starts with: action_)
