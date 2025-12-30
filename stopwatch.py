@@ -6,5 +6,8 @@ class StopwatchApp(App):
         yield Header(show_clock=True)
         yield Footer()
 
+    def toggle_dark_mode(self):
+        self.dark = not self.dark
+
 if __name__ == "__main__":
     StopwatchApp().run()
