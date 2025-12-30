@@ -10,6 +10,8 @@ class Stopwatch(Static):
         yield Button("Reset")
 
 class StopwatchApp(App):
+
+    CSS_PATH = "stopwatch.css"
     BINDINGS = [
         ("d", "toggle_dark_mode", "Toggle dark mode"),
     ]
@@ -18,6 +20,8 @@ class StopwatchApp(App):
         yield Header(show_clock=True)
 
         with ScrollableContainer(id="stopwatches"):
+            yield Stopwatch()
+            yield Stopwatch()
             yield Stopwatch()
 
         yield Footer()
