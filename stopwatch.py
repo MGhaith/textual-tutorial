@@ -2,12 +2,17 @@ from textual.app import App
 from textual.containers import ScrollableContainer
 from textual.widgets import Footer, Header, Static, Button
 
-# Costum stopwatch widget
+# Custom time display widget
+class TimeDisplay(Static):
+    pass
+
+# Custom stopwatch widget
 class Stopwatch(Static):
     def compose(self):
         yield Button("Start", variant="success")
         yield Button("Stop", variant="error")
         yield Button("Reset")
+        yield TimeDisplay("00:00:00.00")
 
 class StopwatchApp(App):
 
