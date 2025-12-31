@@ -70,7 +70,8 @@ class StopwatchApp(App):
     BINDINGS = [
         ("d", "toggle_dark_mode", "Toggle dark mode"),
         ("a", "add_stopwatch", "Add a new stopwatch"),
-        ("r", "remove_stopwatch", "Remove stopwatch")
+        ("r", "remove_stopwatch", "Remove stopwatch"),
+        ("q", "quit_app", "Quit Clock")
     ]
 
     def compose(self):
@@ -102,6 +103,10 @@ class StopwatchApp(App):
         stopwatches = self.query(Stopwatch)
         if stopwatches:
             stopwatches.last().remove()
+    
+    # Quit Clock
+    def action_quit_app(self):
+        self.exit() 
 
 if __name__ == "__main__":
     StopwatchApp().run()
