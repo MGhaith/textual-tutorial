@@ -29,7 +29,9 @@ textual-tutorial/
 ```
 
 ## Running the App
-To start the stopwatches app, clone or download this repository, install the requirements, and run:
+To start the app, install requirements and run the entry point:
+
 ```bash
-python stopwatches.py
+cd clock
+python clock.py
 ```
