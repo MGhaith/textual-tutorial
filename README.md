@@ -36,5 +36,11 @@ cd clock
 python clock.py
 ```
 
+## Key Bindings
+- d — Toggle dark mode
+- a — Add a new stopwatch
+- r — Remove last stopwatch
+- q — Quit the app
+
 ## License
 MIT — see [LICENSE](LICENSE) for details.
