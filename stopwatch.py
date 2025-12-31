@@ -69,6 +69,8 @@ class StopwatchApp(App):
     CSS_PATH = "stopwatch.tcss"
     BINDINGS = [
         ("d", "toggle_dark_mode", "Toggle dark mode"),
+        ("a", "add_stopwatch", "Add a new stopwatch"),
+        ("r", "remove_stopwatch", "Remove stopwatch")
     ]
 
     def compose(self):
@@ -81,12 +83,25 @@ class StopwatchApp(App):
 
         yield Footer()
 
-    # Action method (starts with: action_)
+    ## Action methods (starts with: action_)
     # Toggle dark mode
     def action_toggle_dark_mode(self):
         self.theme = ( 
             "textual-dark" if self.theme == "textual-light" else "textual-light"
          )
+        
+    # Add stopwatch
+    def action_add_stopwatch(self):
+        stopwatch = Stopwatch()
+        container = self.query_one("#stopwatches")
+        container.mount(stopwatch)
+        stopwatch.scroll_visible()
+
+    # Remove stopwatch
+    def action_remove_stopwatch(self):
+        stopwatches = self.query(Stopwatch)
+        if stopwatches:
+            stopwatches.last().remove()
 
 if __name__ == "__main__":
     StopwatchApp().run()
