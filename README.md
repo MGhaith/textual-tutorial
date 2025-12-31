@@ -14,6 +14,20 @@ This app is based on the the Textual [Tutorial](https://textual.textualize.io/tu
 - [Python](https://www.python.org/downloads/)
 - [Textual](https://textual.textualize.io/getting_started/)
 
+## Application Tree
+```bash
+textual-tutorial/
+└─ clock/
+   ├─ clock.py                 # App entry point
+   ├─ apps/
+   │  └─ stopwatch_app.py      #  Stopwatch Textual App
+   ├─ widgets/
+   │  ├─ stopwatch.py          # Stopwatch Widget
+   │  └─ time_display.py       # Timer Widget
+   └─ styles/
+      └─ stopwatch.tcss        # Textual CSS (layout and styling)
+```
+
 ## Running the App
 To start the stopwatches app, clone or download this repository, install the requirements, and run:
 ```bash
