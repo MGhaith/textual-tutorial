@@ -42,5 +42,10 @@ python clock.py
 - r — Remove last stopwatch
 - q — Quit the app
 
+## How It Works
+- StopwatchApp composes the UI with a header, a scrollable container of stopwatches, and a footer.
+- Each Stopwatch widget wires buttons to start/stop/reset events and renders a TimeDisplay.
+- TimeDisplay uses a high-resolution monotonic timer and updates ~60 times per second.
+
 ## License
 MIT — see [LICENSE](LICENSE) for details.
