@@ -14,3 +14,8 @@ This app is based on the the Textual [Tutorial](https://textual.textualize.io/tu
 - [Python](https://www.python.org/downloads/)
 - [Textual](https://textual.textualize.io/getting_started/)
 
+## Running the App
+To start the stopwatches app, clone or download this repository, install the requirements, and run:
+```bash
+python stopwatches.py
+```
