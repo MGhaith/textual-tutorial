@@ -35,3 +35,6 @@ To start the app, install requirements and run the entry point:
 cd clock
 python clock.py
 ```
+
+## License
+MIT — see [LICENSE](LICENSE) for details.
