@@ -7,7 +7,7 @@ from textual.widgets import Footer, Header
 
 class ClockApp(App):
 
-    CSS_PATH = "../styles/stopwatch.tcss"
+    CSS_PATH = "../styles/clock.tcss"
     BINDINGS = [
         ("d", "toggle_dark_mode", "Toggle dark mode"),
         ("a", "add_stopwatch", "Add a new stopwatch"),
