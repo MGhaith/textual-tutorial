@@ -37,3 +37,4 @@ class TimeDisplay(Static):
     def reset(self):
         self.accumelated_time = 0
         self.time_elapsed = 0
+        self.start_time = monotonic()
