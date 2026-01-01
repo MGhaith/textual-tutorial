@@ -35,12 +35,6 @@ class TimeDisplay(Static):
 
     # Reset timer
     def reset(self):
-        # Pause timer
-        self.update_timer.pause()
-
         self.accumelated_time = 0
         self.time_elapsed = 0
         self.start_time = monotonic()
-
-        # Unpause timer
-        self.update_timer.resume()

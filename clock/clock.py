@@ -1,4 +1,4 @@
-from apps.stopwatch_app import StopwatchApp
+from apps.clock_app import ClockApp
 
 if __name__ == "__main__":
-    StopwatchApp().run()
+    ClockApp().run()
