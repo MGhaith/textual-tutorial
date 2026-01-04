@@ -34,4 +34,32 @@ TimeDisplay {
 .started #stop {
     display:block;
 }
+
+/* Timer styles */
+Input {
+    width: 10;
+}
+
+HorizontalGroup{
+    margin: 0 20;
+    background: $boost;
+    align:center middle;
+}
+
+.hidden {
+    display:none;
+}
+
+VerticalGroup {
+    height: 60%;
+    margin: 2 2;
+    background: $panel;
+    border: tall $background;
+    padding: 1 5;
+}
+
+#start_timer {
+    width: 100%;
+    height: auto;
+    dock: bottom;
 }
