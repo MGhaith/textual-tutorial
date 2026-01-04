@@ -1,4 +1,4 @@
-# Stopwatch App as TUI
+# Clock App as TUI
 A simple stopwatches app created using Textual.
 
 ## Source
