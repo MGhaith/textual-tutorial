@@ -1,5 +1,7 @@
 from time import monotonic
 
+from .time_select import TimeSelect
+
 from textual.containers import Center, Middle, VerticalGroup, HorizontalGroup
 from textual.timer import Timer as TextualTimer
 from textual import on
@@ -14,7 +16,8 @@ class Timer(Static):
     @on(Button.Pressed, "#start_timer")
     def start_timer(self):
         self.start_time = monotonic()
-        self.selected_time = self.get_seleted_time()
+        time_select = self.query_one(TimeSelect)
+        self.selected_time = time_select.get_seleted_time()
         self.query_one(ProgressBar).update(total=100, progress=100)
         self.query_one(VerticalGroup).add_class("hidden")
         self.query_one(ProgressBar).remove_class("hidden")
@@ -25,10 +28,7 @@ class Timer(Static):
         with Center():
             with Middle():
                 with VerticalGroup():
-                    with HorizontalGroup():
-                        yield Input(value="00", id="hours", type="number")
-                        yield Input(value="01", id="minutes", type="number")
-                        yield Input(value="00", id="seconds", type="number")
+                    yield TimeSelect()
                     yield Button("Start", id="start_timer", variant="success")
 
                 yield ProgressBar(classes="hidden")
@@ -40,7 +40,7 @@ class Timer(Static):
     def make_progress(self) -> None:
         # Called automatically to advance the progress bar.
         elapsed = monotonic() - self.start_time
-        print(self.selected_time)
+        print(TimeSelect().get_seleted_time())
         remaining_percent = max(0, ((self.selected_time - elapsed) / self.selected_time) * 100)
         self.query_one(ProgressBar).update(progress=remaining_percent)
 
@@ -49,17 +49,3 @@ class Timer(Static):
             self.progress_timer.pause()
             self.query_one(VerticalGroup).remove_class("hidden")
             self.query_one(ProgressBar).add_class("hidden")
-
-    def get_seleted_time(self) -> int:
-        time: int = 0
-
-        inputs= self.query(Input)
-        for x in inputs:
-            if x.id == "hours" and x.value != '':
-                time += int(x.value) * 3600
-            if x.id == "minutes" and x.value != '':
-                time += int(x.value) * 60
-            if x.id == "seconds" and x.value != '':
-                time += int(x.value)
-        
-        return time
