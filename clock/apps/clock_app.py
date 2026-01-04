@@ -23,16 +23,16 @@ class ClockApp(App):
     def compose(self):
         yield Header(show_clock=True)
         yield Tabs(
-            Tab(Apps[0], id="stopwatchs"),
-            Tab(Apps[1], id="timers"),
-            active="stopwatchs"
+            Tab(Apps[0], id="stopwatches"),
+            Tab(Apps[1], id="timer"),
+            active="timer"
         )
 
-        with ContentSwitcher(initial="stopwatchs"):
-                with ScrollableContainer(id="stopwatchs"):
+        with ContentSwitcher(initial="stopwatches"):
+                with ScrollableContainer(id="stopwatches"):
                     yield Stopwatch()
 
-                with ScrollableContainer(id="timers"):
+                with Container(id="timer"):
                     yield Timer()
 
         yield Footer()
