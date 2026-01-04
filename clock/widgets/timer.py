@@ -2,6 +2,7 @@ from time import monotonic
 
 from textual.containers import Center, Middle, VerticalGroup, HorizontalGroup
 from textual.timer import Timer as TextualTimer
+from textual import on
 from textual.widgets import Static, ProgressBar, Input, Button
 
 class Timer(Static):
@@ -9,6 +10,17 @@ class Timer(Static):
     start_time = monotonic()
     selected_time = 60
     progress_timer: TextualTimer
+
+    @on(Button.Pressed, "#start_timer")
+    def start_timer(self):
+        self.start_time = monotonic()
+        self.selected_time = self.get_seleted_time()
+        self.query_one(ProgressBar).update(total=100, progress=100)
+        self.query_one(VerticalGroup).add_class("hidden")
+        self.query_one(ProgressBar).remove_class("hidden")
+        self.progress_timer.resume()
+
+
     def compose(self):
         with Center():
             with Middle():
