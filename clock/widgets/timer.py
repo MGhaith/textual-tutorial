@@ -1,8 +1,10 @@
 from textual.containers import Center, Middle, VerticalGroup, HorizontalGroup
+from textual.timer import Timer as TextualTimer
 from textual.widgets import Static, ProgressBar, Input, Button
 
 class Timer(Static):
     
+    progress_timer: TextualTimer
     def compose(self):
         with Center():
             with Middle():
