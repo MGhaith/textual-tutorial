@@ -4,7 +4,7 @@ from textual.widgets import Static, ProgressBar, Input, Button
 class Timer(Static):
     
     def compose(self):
-        yield Static("Timer")        with Center():
+        with Center():
             with Middle():
                 with VerticalGroup():
                     with HorizontalGroup():
