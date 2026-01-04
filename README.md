@@ -20,12 +20,14 @@ textual-tutorial/
 └─ clock/
    ├─ clock.py                 # App entry point
    ├─ apps/
-   │  └─ stopwatch_app.py      #  Stopwatch Textual App
+   │  └─ clock_app.py          #  Clock Textual App
    ├─ widgets/
    │  ├─ stopwatch.py          # Stopwatch Widget
-   │  └─ time_display.py       # Timer Widget
+   │  ├─ time_display.py       # Stopwatch Time Widget
+   │  ├─ time_select.py        # Timer Time Selector Widget
+   │  └─ timer.py              # Timer Widget
    └─ styles/
-      └─ stopwatch.tcss        # Textual CSS (layout and styling)
+      └─ clock.tcss        # Textual CSS (layout and styling)
 ```
 
 ## Running the App
