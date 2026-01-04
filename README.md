@@ -45,9 +45,11 @@ python clock.py
 - q — Quit the app
 
 ## How It Works
-- StopwatchApp composes the UI with a header, a scrollable container of stopwatches, and a footer.
-- Each Stopwatch widget wires buttons to start/stop/reset events and renders a TimeDisplay.
+- Clock App composes the UI with a header, tabs for both stopwatches and timer, and a footer.
+- For Stopwatches, each widget wires buttons to start/stop/reset events and renders a TimeDisplay.
 - TimeDisplay uses a high-resolution monotonic timer and updates ~60 times per second.
+- For the Timer, it's composed of a time selector widget, start button, and a progress bar.
+- TimeSelect is the time selector and it uses 3 inputs for hours, minutes, and seconds. it returns the selected time. 
 
 ## License
 MIT — see [LICENSE](LICENSE) for details.
