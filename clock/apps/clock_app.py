@@ -2,7 +2,7 @@ from widgets.stopwatch import Stopwatch
 from widgets.timer import Timer
 
 from textual.app import App
-from textual.containers import ScrollableContainer
+from textual.containers import ScrollableContainer, Container
 from textual.widgets import Footer, Header, Tabs, Tab, ContentSwitcher
 
 Apps = [
