@@ -16,3 +16,7 @@ class Timer(Static):
                     yield Button("Start", id="start_timer", variant="success")
 
                 yield ProgressBar(classes="hidden")
+                
+    def on_mount(self) -> None:
+        # Set up a timer to simulate progess happening.
+        self.progress_timer = self.set_interval(1 / 60, self.make_progress, pause=True)
