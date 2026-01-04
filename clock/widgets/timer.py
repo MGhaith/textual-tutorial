@@ -37,3 +37,17 @@ class Timer(Static):
             self.progress_timer.pause()
             self.query_one(VerticalGroup).remove_class("hidden")
             self.query_one(ProgressBar).add_class("hidden")
+
+    def get_seleted_time(self) -> int:
+        time: int = 0
+
+        inputs= self.query(Input)
+        for x in inputs:
+            if x.id == "hours" and x.value != '':
+                time += int(x.value) * 3600
+            if x.id == "minutes" and x.value != '':
+                time += int(x.value) * 60
+            if x.id == "seconds" and x.value != '':
+                time += int(x.value)
+        
+        return time
