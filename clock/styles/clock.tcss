@@ -1,3 +1,4 @@
+/* Stopwatch styles */
 Stopwatch {
     layout: horizontal;
     background: $boost;
@@ -32,4 +33,5 @@ TimeDisplay {
 
 .started #stop {
     display:block;
+}
 }
